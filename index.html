@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+	<script type="application/javascript">
+		$(function() {
+			GenerateCode(); //进来就调用
+		})
+
+		function GenerateCode() {
+			var currUrl = window.location.href;
+			var str = "";
+			if(currUrl.indexOf("index.html") > 0)
+				str = currUrl.replace("index.html", "GoImage.html");
+			else
+				str = currUrl + "/GoImage.html";
+			$("#code").qrcode({
+				//render: "table",
+				width: 200,
+				height: 200,
+				text: str
+			});
+		}
+	</script>
+
+	<body>
+		<div id="main">
+			<div class="demo" style="text-align:center;margin: 0 auto;">
+				<p>扫码查看图片：</p>
+				<div id="code"></div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="application/javascript">
+		$(function() {
+			Jump();//进来就调用
+		})
+		
+		function Jump()
+		{
+			var ranNum = Math.floor(Math.random() * 10 + 1);
+			var currUrl = window.location.href;
+			var str=currUrl.replace("GoImage.html","Img/"+ranNum+".png");
+			window.location.href=str;
+		}	
+	</script>
+</html>
